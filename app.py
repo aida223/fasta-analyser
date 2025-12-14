@@ -29,4 +29,4 @@ if uploaded:
         fig = px.bar(df, text_auto=True, title="توزیع نوکلئوتید")
         st.plotly_chart(fig, use_container_width=True)
 
-st.write("نسخه ۱ — به زودی جستجوی motif و گزارش PDF هم میاد")/ تک به تک بگو اینو چه جوری انجامش بدم هیچی نمیفهمم ازش
+st.write("نسخه ۱ — به زودی جستجوی motif و گزارش PDF هم میاد")
