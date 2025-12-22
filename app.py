@@ -4,7 +4,7 @@ from io import StringIO
 import plotly.express as px
 import pandas as pd
 import re  # برای جستجوی motif
-from fpdf2 import FPDF  # برای PDF (باید به requirements.txt اضافه کنی)
+
 
 st.set_page_config(page_title="FASTA Analyzer Pro", layout="wide")
 st.title("🚀 FASTA Analyzer Pro – بیوتک واقعی شروع شد")
@@ -68,19 +68,6 @@ if uploaded_files:
         csv = df.to_csv(index=False).encode('utf-8')
         st.download_button("دانلود گزارش CSV", csv, "fasta_report.csv", "text/csv")
 
-        # دانلود PDF
-        def create_pdf():
-            pdf = FPDF()
-            pdf.add_page()
-            pdf.set_font("Arial", size=12)
-            pdf.cell(200, 10, txt="FASTA Analyzer Report", ln=1, align='C')
-            for row in data:
-                pdf.cell(200, 10, txt=f"ID: {row['ID']} | Length: {row['Length']} | GC: {row['GC%']:.2f}%", ln=1)
-                pdf.cell(200, 10, txt=f"Motif: {row['Motif Positions']}", ln=1)
-            return pdf.output(dest="S").encode('latin1')
-        
-        pdf_bytes = create_pdf()
-        st.download_button("دانلود گزارش PDF", pdf_bytes, "fasta_report.pdf", "application/pdf")
-
+      
 
 
