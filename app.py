@@ -4,7 +4,7 @@ from io import StringIO
 import plotly.express as px
 import pandas as pd
 import re  # برای جستجوی motif
-from fpdf import FPDF  # برای PDF (باید به requirements.txt اضافه کنی)
+from fpdf2 import FPDF  # برای PDF (باید به requirements.txt اضافه کنی)
 
 st.set_page_config(page_title="FASTA Analyzer Pro", layout="wide")
 st.title("🚀 FASTA Analyzer Pro – بیوتک واقعی شروع شد")
