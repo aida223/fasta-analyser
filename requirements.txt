@@ -2,4 +2,5 @@ streamlit
 biopython
 plotly
 pandas
+fpdf2
 
