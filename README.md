@@ -2,11 +2,11 @@
 
 A fast, bilingual (Persian/English) web tool for analyzing DNA/RNA/Protein sequences in FASTA format.
 
-![Demo](images/demo.png)
+[Demo](images/demo.png)
 
 ## 🚀 Live Demo
 https://fasta-analyser-8qqduidn39l6mmp3rpvkbz.streamlit.app/
-
+(Currently may show temporary downtime due to Streamlit Cloud – try refreshing or check back soon!)
 ## Features
 - Upload multiple FASTA files (even gzipped)
 - Automatic parsing and validation
@@ -39,7 +39,7 @@ My goal: make bioinformatics more accessible, especially for students in develop
 
 ## How to Run Locally
 ```bash
-git clone https://github.com/[اسم-کاربریت]/fasta-analyser.git
+git clone https://github.com/aida233/fasta-analyser.git
 cd fasta-analyser
 pip install -r requirements.txt
 streamlit run app.py
