@@ -33,7 +33,7 @@ if uploaded_files:
             st.error(f"خطا در خواندن {uploaded.name}: {e}")
 
     if all_records:
-        st.success(f"کلاً {len(all_records)} سکانس آماده! 🎉")
+        st.success(f"کلاً {len(all_records)} سکانس آماده! ")
 
         # پیام وضعیت جستجوی motif
         if motif_pattern:
@@ -60,13 +60,13 @@ if uploaded_files:
             positions = []
             if motif_pattern:
                 try:
-                    # re.escape برای جلوگیری از خطای regex غیرعمدی
-                    pattern_compiled = re.compile(re.escape(motif_pattern).upper())
+                    # re.compile برای regex کامل و case-insensitive
+                    pattern_compiled = re.compile(motif_pattern, re.IGNORECASE)
                     matches = list(pattern_compiled.finditer(seq))
                     positions = [m.start() + 1 for m in matches]  # 1-based
                     if positions:
                         matched_seqs = [m.group() for m in matches]
-                        motif_info = ", ".join(f"{pos} ({seq[pos-1:pos-1+len(motif_pattern)]})" for pos in positions)
+                        motif_info = ", ".join(f"{pos} ({matched_seq})" for pos, matched_seq in zip(positions, matched_seqs))
                 except re.error:
                     motif_info = "خطا در regex — pattern نامعتبر"
 
@@ -79,7 +79,7 @@ if uploaded_files:
                 'G': counts['G'],
                 'C': counts['C'],
                 'N': counts['N'],
-                'Motif Positions': motif_info
+                'Motif Matches': motif_info
             })
 
             # نمایش جزئیات هر سکانس در expander
@@ -164,4 +164,4 @@ if uploaded_files:
             )
 
 else:
-    st.info("هنوز فایلی آپلود نشده. منتظر فایل‌های FASTA شما هستیم! 🧬")
+    st.info("هنوز فایلی آپلود نشده. منتظر فایل‌های FASTA شما هستیم! ")
