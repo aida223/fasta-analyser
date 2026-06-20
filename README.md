@@ -1,45 +1,26 @@
-# FASTA Analyzer Pro 🧬
+# FASTA Analyzer
 
-A fast, bilingual (Persian/English) web tool for analyzing DNA/RNA/Protein sequences in FASTA format.
-
-[Demo](images/demo.png)
-
-## 🚀 Live Demo
-https://fasta-analyser-8qqduidn39l6mmp3rpvkbz.streamlit.app/
-(Currently may show temporary downtime due to Streamlit Cloud – try refreshing or check back soon!)
-## Features
-- Upload multiple FASTA files (even gzipped)
-- Automatic parsing and validation
-- Length and GC% calculation for each sequence
-- Interactive nucleotide distribution charts (Plotly)
-- Powerful motif/pattern search (case-insensitive, regex support)
-- Summary table for all sequences
-- Export full report as **CSV** and **PDF**
-- Fully responsive — works great on mobile
-- Persian/English interface
-
-## Tech Stack
-- Python
-- Biopython – FASTA parsing
-- Pandas – data handling
-- Plotly – interactive visualizations
-- Streamlit – web interface
-- fpdf2 – PDF generation
+A fast and user-friendly Python tool for analyzing FASTA files, calculating basic sequence statistics, and preparing data for downstream bioinformatics pipelines.
 
 ## Why I Built This
-I'm a 3rd-year Biotechnology student in Iran. During lab work and coursework, I often needed a quick way to check FASTA files without installing heavy software. This tool started as a personal project and evolved into a full-featured analyzer — now with motif search and report export!
+As a biotechnology student passionate about computational biology and the pharmaceutical domain, I needed a clean, reusable tool to quickly inspect large FASTA files (genomes, proteins, plasmids, etc.). Instead of using scattered scripts or heavy software, I built this lightweight analyzer to bridge the gap between raw sequence data and actionable insights.
 
-My goal: make bioinformatics more accessible, especially for students in developing countries.
+## Features
+- Parse single and multi-FASTA files
+- Calculate GC content, sequence length, N50, total bases, etc.
+- Amino acid composition and basic physicochemical properties (using Biopython + custom functions)
+- Export results to CSV/JSON for further analysis
+- Simple CLI + modular design for easy extension
 
-## Coming Soon
-- Protein translation & amino acid analysis
-- Basic quality control (Phred scores if FASTQ added)
-- Batch processing improvements
-- IUPAC ambiguity code support in motif search
+## Technologies Used
+- **Python** 3.8+
+- **Biopython**
+- **RDKit** (for molecular properties when sequences are translated)
+- **Pandas** & **Matplotlib** for visualization
+- Object-oriented design with proper error handling and logging
 
-## How to Run Locally
+## Installation
 ```bash
-git clone https://github.com/aida233/fasta-analyser.git
-cd fasta-analyser
+git clone https://github.com/yourusername/fasta-analyzer.git
+cd fasta-analyzer
 pip install -r requirements.txt
-streamlit run app.py
